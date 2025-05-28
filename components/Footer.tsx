@@ -78,7 +78,7 @@ export default function Footer({ resort }: { resort?: string }) {
         </div>
         
         <div className="border-t border-zen-beaver mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Treescape Resort. All rights reserved.</p>
+          <p>&copy; 2024 Treescape Resort. All rights reserved.</p>
         </div>
       </div>
     </footer>

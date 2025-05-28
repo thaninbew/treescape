@@ -3,6 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Zen Design Color Scheme */
+  --color-zen-brown: #564635;      /* Royal Brown */
+  --color-zen-beaver: #9E886F;     /* Beaver */
+  --color-zen-vanilla: #D2C0A7;    /* Dark Vanilla */
+  --color-zen-coffee: #E6DDD4;     /* White Coffee */
+  --color-zen-green: #ABBB6C;      /* Middle Green Yellow */
+  --color-zen-leaf: #889D35;       /* Palm Leaf */
 }
 
 @theme inline {
@@ -10,6 +18,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Zen Design Colors */
+  --color-zen-brown: #564635;
+  --color-zen-beaver: #9E886F;
+  --color-zen-vanilla: #D2C0A7;
+  --color-zen-coffee: #E6DDD4;
+  --color-zen-green: #ABBB6C;
+  --color-zen-leaf: #889D35;
 }
 
 @media (prefers-color-scheme: dark) {
