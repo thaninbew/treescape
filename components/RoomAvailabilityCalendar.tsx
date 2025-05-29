@@ -1,174 +1,214 @@
 'use client';
 
-import { useState } from 'react';
+import { DayPicker } from 'react-day-picker';
+import { addDays, startOfToday } from 'date-fns';
+import 'react-day-picker/dist/style.css';
 
 interface RoomAvailabilityCalendarProps {
   roomId: string;
+  resort?: string;
 }
 
 // Mock availability data - in a real app this would come from an API
 const generateAvailability = (roomId: string) => {
-  const availability: { [key: string]: boolean } = {};
-  const today = new Date();
+  const unavailableDates: Date[] = [];
+  const today = startOfToday();
   
   // Generate 90 days of availability data
   for (let i = 0; i < 90; i++) {
-    const date = new Date(today);
-    date.setDate(today.getDate() + i);
-    const dateKey = date.toISOString().split('T')[0];
+    const date = addDays(today, i);
     
     // Mock some unavailable dates (roughly 30% occupancy)
-    const hash = dateKey.split('').reduce((a, b) => a + b.charCodeAt(0), 0) + roomId.length;
-    availability[dateKey] = hash % 10 > 3; // Available if hash mod 10 > 3
+    const hash = date.toISOString().split('T')[0].split('').reduce((a, b) => a + b.charCodeAt(0), 0) + roomId.length;
+    if (hash % 10 <= 3) { // Unavailable if hash mod 10 <= 3
+      unavailableDates.push(date);
+    }
   }
   
-  return availability;
+  return unavailableDates;
 };
 
-const getMonthData = (year: number, month: number) => {
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
-  const startDate = new Date(firstDay);
-  startDate.setDate(startDate.getDate() - firstDay.getDay());
+export default function RoomAvailabilityCalendar({ roomId, resort }: RoomAvailabilityCalendarProps) {
+  const today = startOfToday();
+  const unavailableDates = generateAvailability(roomId);
   
-  const days = [];
-  const current = new Date(startDate);
-  
-  while (current <= lastDay || current.getDay() !== 0) {
-    days.push(new Date(current));
-    current.setDate(current.getDate() + 1);
-  }
-  
-  return days;
-};
+  // Disable past dates and unavailable dates
+  const disabledDates = [
+    { before: today },
+    ...unavailableDates
+  ];
 
-const formatDate = (date: Date) => {
-  return date.toLocaleDateString('en-US', { 
-    month: 'long', 
-    year: 'numeric' 
-  });
-};
-
-export default function RoomAvailabilityCalendar({ roomId }: RoomAvailabilityCalendarProps) {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const availability = generateAvailability(roomId);
-  
-  const monthData = getMonthData(currentDate.getFullYear(), currentDate.getMonth());
-  
-  const navigateMonth = (direction: 'prev' | 'next') => {
-    const newDate = new Date(currentDate);
-    newDate.setMonth(currentDate.getMonth() + (direction === 'next' ? 1 : -1));
-    setCurrentDate(newDate);
-  };
-  
-  const isDateAvailable = (date: Date) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+  // Custom styles for the calendar with zen theme colors
+  const customStyles = `
+    .rdp {
+      --rdp-cell-size: 40px;
+      --rdp-accent-color: #8B7355;
+      --rdp-background-color: #F5F1EB;
+      --rdp-accent-background-color: #8B7355;
+      font-family: inherit;
+    }
     
-    if (date < today) return false; // Past dates are not available
+    .rdp-months {
+      justify-content: center;
+    }
     
-    const dateKey = date.toISOString().split('T')[0];
-    return availability[dateKey] ?? false;
-  };
-  
-  const isCurrentMonth = (date: Date) => {
-    return date.getMonth() === currentDate.getMonth();
-  };
-  
-  const isToday = (date: Date) => {
-    const today = new Date();
-    return date.toDateString() === today.toDateString();
-  };
+    .rdp-month {
+      margin: 0;
+    }
+    
+    .rdp-caption {
+      color: #4A3F35;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .rdp-nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    .rdp-nav_button {
+      color: #8B7355 !important;
+      background: none !important;
+      border: none !important;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    
+    .rdp-nav_button:hover {
+      background-color: #F5F1EB !important;
+      color: #4A3F35 !important;
+    }
+    
+    .rdp-nav_button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    
+    .rdp-nav_icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+    
+    /* Target the SVG chevron specifically */
+    .rdp-chevron {
+      fill: #8B7355 !important;
+      color: #8B7355 !important;
+    }
+    
+    .rdp-nav_button:hover .rdp-chevron {
+      fill: #4A3F35 !important;
+      color: #4A3F35 !important;
+    }
+    
+    /* Fix any SVG polygon elements */
+    .rdp-chevron polygon {
+      fill: inherit !important;
+    }
+    
+    .rdp-head_cell {
+      color: #4A3F35;
+      opacity: 0.8;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    
+    .rdp-cell {
+      color: #4A3F35;
+    }
+    
+    .rdp-day {
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      border: none;
+      background: none;
+      color: #4A3F35 !important;
+      font-weight: 500;
+      cursor: default;
+    }
+    
+    /* Improve contrast for regular days */
+    .rdp-day_button {
+      background: rgba(255, 255, 255, 0.6) !important;
+      color: #4A3F35 !important;
+      border: 1px solid rgba(139, 115, 85, 0.2) !important;
+      border-radius: 8px !important;
+      font-weight: 500 !important;
+      transition: all 0.2s ease !important;
+      cursor: default !important;
+    }
+    
+    .rdp-day:hover:not(.rdp-day_disabled) .rdp-day_button,
+    .rdp-day:hover:not(.rdp-day_disabled) {
+      background-color: rgba(139, 115, 85, 0.1) !important;
+      color: #4A3F35 !important;
+      border-color: rgba(139, 115, 85, 0.4) !important;
+    }
+    
+    .rdp-day_disabled .rdp-day_button,
+    .rdp-day_disabled {
+      opacity: 0.3 !important;
+      color: #dc2626 !important;
+      text-decoration: line-through !important;
+      background-color: rgba(220, 38, 38, 0.1) !important;
+      border-color: rgba(220, 38, 38, 0.2) !important;
+      cursor: not-allowed !important;
+    }
+    
+    .rdp-day_today .rdp-day_button,
+    .rdp-day_today {
+      font-weight: bold !important;
+      border: 2px solid #8B7355 !important;
+      background: rgba(139, 115, 85, 0.1) !important;
+      color: #4A3F35 !important;
+    }
+    
+    .rdp-day_outside .rdp-day_button,
+    .rdp-day_outside {
+      opacity: 0.3;
+      color: #8B7355 !important;
+    }
+    
+    /* Override any remaining blue colors */
+    .rdp * {
+      --rdp-accent-color: #8B7355 !important;
+      --rdp-accent-background-color: #8B7355 !important;
+    }
+  `;
 
   return (
     <div className="w-full">
-      {/* Calendar Header */}
-      <div className="flex items-center justify-between mb-4">
-        <button
-          onClick={() => navigateMonth('prev')}
-          className="p-2 hover:bg-zen-coffee rounded-lg transition-colors"
-          aria-label="Previous month"
-        >
-          <svg className="w-4 h-4 text-zen-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        <h4 className="text-lg font-semibold text-zen-brown">
-          {formatDate(currentDate)}
-        </h4>
-        
-        <button
-          onClick={() => navigateMonth('next')}
-          className="p-2 hover:bg-zen-coffee rounded-lg transition-colors"
-          aria-label="Next month"
-        >
-          <svg className="w-4 h-4 text-zen-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Days of Week */}
-      <div className="grid grid-cols-7 gap-1 mb-2">
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-          <div key={day} className="text-center text-xs font-medium text-zen-brown opacity-70 py-2">
-            {day}
-          </div>
-        ))}
-      </div>
-
-      {/* Calendar Grid */}
-      <div className="grid grid-cols-7 gap-1">
-        {monthData.map((date, index) => {
-          const available = isDateAvailable(date);
-          const currentMonth = isCurrentMonth(date);
-          const today = isToday(date);
-          
-          return (
-            <div
-              key={index}
-              className={`
-                aspect-square flex items-center justify-center text-xs relative
-                ${currentMonth ? 'text-zen-brown' : 'text-zen-brown opacity-30'}
-                ${available && currentMonth 
-                  ? 'bg-zen-green bg-opacity-20 hover:bg-opacity-30 cursor-pointer' 
-                  : currentMonth 
-                    ? 'bg-red-100 cursor-not-allowed' 
-                    : ''
-                }
-                ${today ? 'ring-2 ring-zen-green' : ''}
-                rounded transition-colors
-              `}
-              title={`${date.toLocaleDateString()} - ${available ? 'Available' : 'Not Available'}`}
-            >
-              <span className={`
-                ${today ? 'font-bold' : ''}
-                ${available && currentMonth ? 'text-zen-green font-medium' : ''}
-              `}>
-                {date.getDate()}
-              </span>
-              
-              {/* Availability indicator */}
-              {currentMonth && (
-                <div className={`
-                  absolute bottom-0.5 right-0.5 w-1.5 h-1.5 rounded-full
-                  ${available ? 'bg-zen-green' : 'bg-red-400'}
-                `} />
-              )}
-            </div>
-          );
-        })}
-      </div>
+      <style dangerouslySetInnerHTML={{ __html: customStyles }} />
+      
+      <DayPicker
+        numberOfMonths={1}
+        disabled={disabledDates}
+        modifiers={{
+          booked: unavailableDates,
+        }}
+        modifiersStyles={{
+          booked: {
+            textDecoration: 'line-through',
+            color: '#dc2626',
+            opacity: 0.6,
+          },
+        }}
+        className="mx-auto"
+      />
 
       {/* Legend */}
       <div className="flex items-center justify-center gap-6 mt-4 text-xs">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-zen-green bg-opacity-20 rounded"></div>
+          <div className="w-3 h-3 bg-white border border-zen-green rounded"></div>
           <span className="text-zen-brown">Available</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-red-100 rounded"></div>
+          <div className="w-3 h-3 bg-red-600 rounded opacity-60"></div>
           <span className="text-zen-brown">Unavailable</span>
         </div>
         <div className="flex items-center gap-2">
@@ -177,13 +217,38 @@ export default function RoomAvailabilityCalendar({ roomId }: RoomAvailabilityCal
         </div>
       </div>
 
-      {/* Booking Note */}
-      <div className="mt-4 p-3 bg-zen-leaf bg-opacity-10 rounded-lg">
-        <p className="text-xs text-zen-brown text-center">
-          <span className="font-medium">Minimum stay:</span> 2 nights
-          <br />
-          <span className="font-medium">Check-in:</span> 3:00 PM • <span className="font-medium">Check-out:</span> 11:00 AM
-        </p>
+      {/* Booking Info */}
+      <div className="mt-4 p-4 bg-zen-vanilla rounded-lg border border-zen-beaver">
+        <div className="text-center">
+          <h4 className="font-semibold text-zen-brown mb-2">Ready to Book?</h4>
+          <p className="text-xs text-zen-brown mb-3">
+            <span className="font-medium">Minimum stay:</span> 2 nights
+            <br />
+            <span className="font-medium">Check-in:</span> 3:00 PM • <span className="font-medium">Check-out:</span> 11:00 AM
+          </p>
+          <div className="flex flex-col sm:flex-row gap-2 justify-center">
+            <button
+              onClick={() => {
+                window.open('https://ibe.hoteliers.guru/ibe/en/Tree-Scape-Retreat-Resort-Hangdong-Chiangmai-TH?tid=e45117b832284e96bedb1ee28d32553d&', '_blank');
+              }}
+              className="px-4 py-2 bg-zen-green text-white rounded-lg hover:bg-opacity-80 transition-colors text-sm font-medium"
+            >
+              Book Online Now
+            </button>
+            <button
+              onClick={() => {
+                const contactPath = resort ? `/${resort}/contact` : '/contact';
+                window.location.href = contactPath;
+              }}
+              className="px-4 py-2 bg-zen-brown text-white rounded-lg hover:bg-opacity-80 transition-colors text-sm font-medium"
+            >
+              Contact Us Directly
+            </button>
+          </div>
+          <p className="text-xs text-zen-brown mt-2 opacity-70">
+            Book directly online or contact us for personalized assistance
+          </p>
+        </div>
       </div>
     </div>
   );

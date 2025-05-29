@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
 import GalleryGrid from '@/components/GalleryGrid';
-import CTAButton from '@/components/CTAButton';
 import RoomAvailabilityCalendar from '@/components/RoomAvailabilityCalendar';
+import BookingButtons from '@/components/BookingButtons';
+import CTAButton from '@/components/CTAButton';
 import Image from 'next/image';
 
 // Map resort names to their data
@@ -251,15 +252,7 @@ export default async function RoomDetailsPage({
                 </div>
               </div>
               
-              <CTAButton href={`/${resort}/contact?room=${room.id}`} className="w-full" size="lg">
-                Book This Room
-              </CTAButton>
-              
-              <div className="text-center mt-4">
-                <CTAButton href={`tel:${resortData.contact.phone}`} variant="secondary" size="sm">
-                  Call for Details
-                </CTAButton>
-              </div>
+              <BookingButtons resort={resort} roomId={room.id} size="lg" layout="vertical" />
             </div>
 
             {/* Availability Calendar */}
@@ -267,7 +260,7 @@ export default async function RoomDetailsPage({
               <h3 className="text-xl font-bold text-zen-brown mb-4">
                 Availability Calendar
               </h3>
-              <RoomAvailabilityCalendar roomId={room.id} />
+              <RoomAvailabilityCalendar roomId={room.id} resort={resort} />
             </div>
 
             {/* Quick Info */}

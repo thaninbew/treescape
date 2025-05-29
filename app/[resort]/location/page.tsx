@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
-import CTAButton from '@/components/CTAButton';
+import BookingButtons from '@/components/BookingButtons';
 
 // Map resort names to their data
 const resortDataMap = {
@@ -222,12 +222,7 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
             Plan your journey to our beautiful location and experience the perfect getaway.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href={`/${resort}/contact`} size="lg">
-              Book Your Stay
-            </CTAButton>
-            <CTAButton href={`tel:${resortData.contact.phone}`} variant="secondary" size="lg">
-              Call for Directions
-            </CTAButton>
+            <BookingButtons resort={resort} size="lg" />
           </div>
         </section>
       </div>

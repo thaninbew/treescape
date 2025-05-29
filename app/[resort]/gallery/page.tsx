@@ -3,6 +3,7 @@ import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
 import GalleryGrid from '@/components/GalleryGrid';
 import CTAButton from '@/components/CTAButton';
+import BookingButtons from '@/components/BookingButtons';
 
 // Map resort names to their data
 const resortDataMap = {
@@ -100,12 +101,7 @@ export default async function GalleryPage({ params }: { params: Promise<{ resort
             the full beauty and tranquility of {resortData.name}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href={`/${resort}/contact`} size="lg">
-              Book Your Stay
-            </CTAButton>
-            <CTAButton href={`/${resort}/contact`} variant="secondary" size="lg">
-              Get Information
-            </CTAButton>
+            <BookingButtons resort={resort} size="lg" />
           </div>
         </section>
       </div>

@@ -1,6 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Header({ resort }: { resort?: string }) {
+  const handleBookNow = () => {
+    window.open('https://ibe.hoteliers.guru/ibe/en/Tree-Scape-Retreat-Resort-Hangdong-Chiangmai-TH?tid=e45117b832284e96bedb1ee28d32553d&', '_blank');
+  };
+
   return (
     <header className="bg-zen-coffee shadow-md py-4 relative z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -53,10 +59,21 @@ export default function Header({ resort }: { resort?: string }) {
           </nav>
         )}
         
-        <div>
-          <button className="bg-zen-leaf text-zen-coffee px-4 py-2 rounded hover:bg-zen-brown transition-colors">
+        <div className="flex gap-2">
+          <button 
+            onClick={handleBookNow}
+            className="bg-zen-leaf text-zen-coffee px-4 py-2 rounded hover:bg-zen-brown transition-colors font-medium"
+          >
             Book Now
           </button>
+          {resort && (
+            <Link 
+              href={`/${resort}/contact`}
+              className="bg-zen-brown text-zen-coffee px-4 py-2 rounded hover:bg-zen-leaf transition-colors font-medium"
+            >
+              Contact
+            </Link>
+          )}
         </div>
       </div>
     </header>

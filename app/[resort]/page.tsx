@@ -4,9 +4,10 @@ import { resortData as mountainviewData } from '@/data/mountainview';
 import Hero from '@/components/Hero';
 import RoomCard from '@/components/RoomCard';
 import ServicesList from '@/components/ServicesList';
-import ReviewSection from '@/components/ReviewSection';
 import GalleryGrid from '@/components/GalleryGrid';
+import ReviewSection from '@/components/ReviewSection';
 import CTAButton from '@/components/CTAButton';
+import BookingButtons from '@/components/BookingButtons';
 
 // Map resort names to their data
 const resortDataMap = {
@@ -160,12 +161,7 @@ export default async function ResortPage({ params }: { params: Promise<{ resort:
             Book your stay today and create unforgettable memories in our luxury resort.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href={`/${resort}/contact`} size="lg">
-              Book Now
-            </CTAButton>
-            <CTAButton href={`/${resort}/contact`} variant="secondary" size="lg">
-              Contact Us
-            </CTAButton>
+            <BookingButtons resort={resort} size="lg" />
           </div>
         </div>
       </section>
