@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="min-h-screen flex">
+      <main className="min-h-screen flex relative z-10">
         {/* Treescape Side */}
-        <div className="w-1/2 relative group cursor-pointer">
+        <div className="w-1/2 relative group cursor-pointer overflow-hidden">
           <Link href="/treescape" className="block h-full">
             {/* Background Image with Dimmed Overlay */}
             <div 
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Mountainview Side */}
-        <div className="w-1/2 relative group cursor-pointer">
+        <div className="w-1/2 relative group cursor-pointer overflow-hidden">
           <Link href="/mountainview" className="block h-full">
             {/* Background Image with Dimmed Overlay */}
             <div 
