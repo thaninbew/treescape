@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer({ resort }: { resort?: string }) {
   return (
-    <footer className="bg-zen-brown text-zen-coffee py-12">
+    <footer className="bg-zen-brown text-zen-coffee py-12 relative z-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header({ resort }: { resort?: string }) {
   return (
-    <header className="bg-zen-coffee shadow-md py-4">
+    <header className="bg-zen-coffee shadow-md py-4 relative z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div>
           {resort ? (
