@@ -1,47 +1,71 @@
 export const resortData = {
   name: "Treescape",
-  description: "A tranquil retreat nestled among ancient forest trees",
+  description: "A tranquil retreat resort where all rooms include breakfast. Enjoy swimming pool access and beautiful garden views.",
   hero: {
     image: "/images/treescape/hero.jpg",
     title: "Welcome to Treescape",
-    subtitle: "A Luxury Forest Retreat",
+    subtitle: "A Luxury Retreat Resort",
   },
   rooms: [
     {
-      id: "forest-view-suite",
-      name: "Forest View Suite",
-      description: "Spacious suite with panoramic views of the surrounding forest.",
-      image: "/images/treescape/rooms/forest-suite.jpg",
-      price: 299,
+      id: "deluxe-room",
+      name: "Deluxe Room",
+      description: "Deluxe Room with swimming pool and garden views.",
+      image: "/images/treescape/rooms/deluxe.jpg",
+      price: 2800,
       capacity: 2,
-      amenities: ["King Bed", "Private Balcony", "Fireplace", "Spa Bathroom", "Mini Bar"]
+      amenities: ["Air conditioning", "Hairdryer", "Television", "Internet/Wifi in room"],
+      notes: [
+        "Maximum occupancy of 2 persons",
+        "Children under 7 years old stay for free (using existing beds)",
+        "Breakfast is included for 2 persons",
+        "If you need an extra bed, 1,000 baht / bed"
+      ]
     },
     {
-      id: "treehouse-cabin",
-      name: "Treehouse Cabin",
-      description: "Unique elevated cabin built around a living tree with luxury amenities.",
-      image: "/images/treescape/rooms/treehouse.jpg",
-      price: 399,
+      id: "pool-access-room",
+      name: "Pool Access Room",
+      description: "Comfortable room with convenient pool access.",
+      image: "/images/treescape/rooms/pool-access.jpg",
+      price: 3100,
       capacity: 2,
-      amenities: ["Queen Bed", "Panoramic Windows", "Outdoor Shower", "Private Deck", "Breakfast Included"]
+      amenities: ["Air conditioning", "Hairdryer", "Minibar", "Television", "Internet/Wifi in room"],
+      notes: [
+        "Maximum occupancy of 2 persons",
+        "Children under 7 years old stay for free (using existing beds)",
+        "Breakfast is included for 2 persons",
+        "If you need an extra bed, 1,000 baht / bed"
+      ]
     },
     {
-      id: "woodland-retreat",
-      name: "Woodland Retreat",
-      description: "Cozy room with rustic decor and modern comforts.",
-      image: "/images/treescape/rooms/woodland.jpg",
-      price: 249,
+      id: "luxury-pool-access-room",
+      name: "Luxury Pool Access Room",
+      description: "All rooms are near the pool with views of the green moss garden and the cozy trees.",
+      image: "/images/treescape/rooms/luxury-pool.jpg",
+      price: 4000,
       capacity: 2,
-      amenities: ["Queen Bed", "Forest View", "Ensuite Bathroom", "Workspace", "Coffee Station"]
+      amenities: ["Air conditioning", "Hairdryer", "Minibar", "Pool Access", "Television", "Internet/Wifi in room"],
+      notes: [
+        "Maximum occupancy of 2 persons",
+        "Children under 7 years old stay for free (using existing beds)",
+        "Breakfast is included for 2 persons",
+        "If you need an extra bed, 1,000 baht / bed"
+      ]
     },
     {
-      id: "family-cabin",
-      name: "Family Cabin",
-      description: "Spacious two-bedroom cabin perfect for families.",
+      id: "family-room",
+      name: "Family Room",
+      description: "It is a room with high ceilings, airy and comfortable, and a mezzanine floor, thus increasing the living space. Rooms are near the pool with the views of the green moss garden and trees.",
       image: "/images/treescape/rooms/family.jpg",
-      price: 499,
-      capacity: 4,
-      amenities: ["Two Bedrooms", "Full Kitchen", "Living Area", "Outdoor BBQ", "Kids Activities"]
+      price: 4500,
+      capacity: 3,
+      amenities: ["Air conditioning", "Hairdryer", "Minibar", "Television", "Internet/Wifi in room"],
+      notes: [
+        "Maximum occupancy of 3 persons",
+        "Children under 7 years old stay for free (using existing beds)",
+        "Breakfast is included for 2 persons",
+        "If you need an extra bed, 1,000 baht / bed"
+      ]
     }
   ],
   gallery: [
@@ -49,89 +73,89 @@ export const resortData = {
       id: "exterior",
       title: "Resort Exterior",
       image: "/images/treescape/gallery/exterior.jpg",
-      description: "The beautiful exterior of our resort nestled in the forest."
-    },
-    {
-      id: "lobby",
-      title: "Main Lobby",
-      image: "/images/treescape/gallery/lobby.jpg",
-      description: "Our welcoming lobby with natural wood elements and comfortable seating."
-    },
-    {
-      id: "restaurant",
-      title: "Forest Dining",
-      image: "/images/treescape/gallery/restaurant.jpg",
-      description: "Our restaurant with panoramic views of the surrounding trees."
-    },
-    {
-      id: "spa",
-      title: "Nature Spa",
-      image: "/images/treescape/gallery/spa.jpg",
-      description: "Relax and rejuvenate in our natural spa with forest-inspired treatments."
-    },
-    {
-      id: "trail",
-      title: "Nature Trail",
-      image: "/images/treescape/gallery/trail.jpg",
-      description: "One of our many beautiful nature trails accessible directly from the resort."
+      description: "The beautiful exterior of our retreat resort with lush gardens."
     },
     {
       id: "pool",
-      title: "Infinity Pool",
+      title: "Swimming Pool",
       image: "/images/treescape/gallery/pool.jpg",
-      description: "Our infinity pool that seems to merge with the forest canopy."
+      description: "Our beautiful swimming pool surrounded by green moss gardens and trees."
+    },
+    {
+      id: "garden",
+      title: "Moss Garden",
+      image: "/images/treescape/gallery/garden.jpg",
+      description: "The serene green moss garden that provides peaceful views from our rooms."
+    },
+    {
+      id: "deluxe-room",
+      title: "Deluxe Room",
+      image: "/images/treescape/gallery/deluxe-room.jpg",
+      description: "Comfortable deluxe room with pool and garden views."
+    },
+    {
+      id: "family-room",
+      title: "Family Room",
+      image: "/images/treescape/gallery/family-room.jpg",
+      description: "Spacious family room with high ceilings and mezzanine floor."
+    },
+    {
+      id: "breakfast",
+      title: "Breakfast Service",
+      image: "/images/treescape/gallery/breakfast.jpg",
+      description: "Delicious breakfast included with all room stays."
     }
   ],
   services: [
     {
-      id: "dining",
-      name: "Forest-to-Table Dining",
-      description: "Experience cuisine made with locally foraged ingredients and fresh produce.",
+      id: "breakfast",
+      name: "Complimentary Breakfast",
+      description: "All rooms include breakfast for 2 persons, featuring fresh local ingredients.",
       icon: "utensils"
     },
     {
-      id: "spa",
-      name: "Natural Wellness Spa",
-      description: "Rejuvenate with treatments inspired by forest botanicals and natural remedies.",
-      icon: "spa"
+      id: "pool",
+      name: "Swimming Pool Access",
+      description: "Enjoy our beautiful swimming pool surrounded by lush gardens and trees.",
+      icon: "swimming"
     },
     {
-      id: "trails",
-      name: "Guided Forest Trails",
-      description: "Explore the surrounding forest with our expert naturalist guides.",
-      icon: "hiking"
+      id: "gardens",
+      name: "Garden Views",
+      description: "Relax with views of our serene green moss gardens and peaceful tree landscapes.",
+      icon: "leaf"
     },
     {
-      id: "yoga",
-      name: "Canopy Yoga",
-      description: "Practice yoga on our special deck surrounded by trees.",
-      icon: "yoga"
+      id: "wifi",
+      name: "Complimentary WiFi",
+      description: "Stay connected with free high-speed internet access in all rooms.",
+      icon: "wifi"
     },
     {
-      id: "birdwatching",
-      name: "Birdwatching Tours",
-      description: "Spot rare and beautiful birds with our ornithology experts.",
-      icon: "binoculars"
+      id: "extra-bed",
+      name: "Extra Bed Service",
+      description: "Additional beds available for 1,000 baht per bed for your convenience.",
+      icon: "bed"
     },
     {
-      id: "workshops",
-      name: "Nature Craft Workshops",
-      description: "Learn to create with natural materials in our artisan workshops.",
-      icon: "paint-brush"
+      id: "child-friendly",
+      name: "Family Friendly",
+      description: "Children under 7 years old stay for free using existing beds.",
+      icon: "child"
     }
   ],
   contact: {
-    address: "1234 Forest Lane, Woodland Hills, CA 90210",
-    phone: "+1 (555) 123-4567",
+    address: "Treescape Retreat Resort, Thailand",
+    phone: "+66 (0) 123-456-789",
     email: "info@treescaperesort.com",
     hours: "Reception: 24/7",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.2!2d-118.6!3d34.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA2JzAwLjAiTiAxMTjCsDM2JzAwLjAiVw!5e0!3m2!1sen!2sus!4v1620160000000!5m2!1sen!2sus"
   },
   location: {
-    description: "Located just 2 hours from downtown, our resort is nestled in a protected forest reserve. The peaceful setting offers a perfect escape from urban life while remaining accessible.",
-    landmarks: ["30 minutes from Mountain National Park", "15 minutes from Forest Lake", "10 minutes from Historic Village"],
-    activities: ["Hiking", "Birdwatching", "Fishing", "Canoeing", "Mountain Biking"],
-    transportation: ["Airport shuttle available", "Car recommended", "EV charging stations on-site"]
+    description: "Located in a peaceful setting surrounded by lush gardens and moss landscapes. Our retreat resort offers a perfect escape with modern amenities and natural beauty.",
+    landmarks: ["Near beautiful natural attractions", "Close to local markets and restaurants", "Easy access to cultural sites"],
+    activities: ["Swimming", "Garden walks", "Relaxation", "Photography", "Local excursions"],
+    transportation: ["Airport transfer available", "Taxi service", "Local transport connections"]
   },
   reviews: [
     {
@@ -139,21 +163,21 @@ export const resortData = {
       guest: "Sarah M.",
       rating: 5,
       date: "March 2023",
-      text: "Our stay at Treescape was magical. Waking up to the sounds of birds and seeing the morning mist through the trees was an experience we'll never forget."
+      text: "The Deluxe Room was perfect with beautiful pool and garden views. The included breakfast was delicious and the staff was incredibly welcoming."
     },
     {
       id: "review2",
       guest: "David L.",
       rating: 5,
       date: "January 2023",
-      text: "The treehouse cabin exceeded all our expectations. It was the perfect romantic getaway with luxury touches in a natural setting."
+      text: "We stayed in the Luxury Pool Access Room and loved being so close to the pool. The moss garden views were so peaceful and relaxing."
     },
     {
       id: "review3",
       guest: "Emily and Family",
       rating: 4,
       date: "December 2022",
-      text: "Our kids loved the family cabin and all the nature activities. The staff was incredibly knowledgeable and friendly."
+      text: "The Family Room was spacious with the mezzanine floor giving us extra space. Our kids loved the pool and the free stay for under 7s was a great bonus!"
     }
   ]
 }; 

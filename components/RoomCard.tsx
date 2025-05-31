@@ -11,6 +11,7 @@ interface RoomCardProps {
     price: number;
     capacity: number;
     amenities: string[];
+    notes?: string[];
   };
   resort?: string;
   className?: string;
@@ -45,9 +46,9 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
           </span>
           <span className="flex items-center">
             <svg className="w-4 h-4 mr-1 text-zen-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            {room.amenities.find(a => a.includes('Bed')) ? 'King Bed' : 'Premium Bed'}
+            Breakfast Included
           </span>
         </div>
 
@@ -69,11 +70,14 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
         <div className="flex items-center justify-between mb-4">
           <div>
             <span className="text-2xl font-bold text-zen-green">
-              ${room.price}
+              ฿{room.price.toLocaleString()}
             </span>
             <span className="text-sm text-zen-brown opacity-70 ml-1">
               /night
             </span>
+            <div className="text-xs text-zen-green font-medium">
+              Breakfast Included
+            </div>
           </div>
         </div>
 
