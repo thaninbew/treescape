@@ -1,10 +1,15 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <link rel="preload" as="image" href="images/treescape_landing.jpg" />
+        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop" />
+      </Head>
       <Header />
       <main className="min-h-screen flex relative z-10">
         {/* Treescape Side */}
@@ -12,9 +17,9 @@ export default function Home() {
           <Link href="/treescape" className="block h-full">
             {/* Background Image with Dimmed Overlay */}
             <div 
-              className="h-screen bg-cover bg-center relative transition-all duration-300 group-hover:scale-105 brightness-75 group-hover:brightness-90"
+              className="h-screen bg-cover bg-center relative transition-all duration-300 group-hover:scale-105 brightness-75 group-hover:brightness-90 bg-zen-brown"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=800&fit=crop')"
+                backgroundImage: "url('images/treescape_landing.jpg')"
               }}
             >
               {/* Content */}
@@ -35,7 +40,7 @@ export default function Home() {
           <Link href="/mountainview" className="block h-full">
             {/* Background Image with Dimmed Overlay */}
             <div 
-              className="h-screen bg-cover bg-center relative transition-all duration-300 group-hover:scale-105 brightness-75 group-hover:brightness-90"
+              className="h-screen bg-cover bg-center relative transition-all duration-300 group-hover:scale-105 brightness-75 group-hover:brightness-90 bg-gray-600"
               style={{
                 backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop')"
               }}

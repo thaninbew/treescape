@@ -2,7 +2,7 @@ export const resortData = {
   name: "Treescape",
   description: "A tranquil retreat resort where all rooms include breakfast. Enjoy swimming pool access and beautiful garden views.",
   hero: {
-    image: "/images/treescape/hero.jpg",
+    image: "/images/treescape_hero.JPG",
     title: "Welcome to Treescape",
     subtitle: "A Luxury Retreat Resort",
   },
@@ -70,40 +70,136 @@ export const resortData = {
   ],
   gallery: [
     {
-      id: "exterior",
-      title: "Resort Exterior",
-      image: "/images/treescape/gallery/exterior.jpg",
-      description: "The beautiful exterior of our retreat resort with lush gardens."
+        id: "pool-main-bright",
+        title: "Swimming Pool",
+        image: "/images/pool_main_bright.jpg",
+        description: "Our stunning swimming pool surrounded by lush greenery."
+      },
+      {
+      id: "treescape-hero",
+      title: "Resort Overview",
+      image: "/images/treescape_hero.JPG",
+      description: "The beautiful main view of our Treescape retreat resort."
     },
     {
-      id: "pool",
-      title: "Swimming Pool",
-      image: "/images/treescape/gallery/pool.jpg",
-      description: "Our beautiful swimming pool surrounded by green moss gardens and trees."
-    },
-    {
-      id: "garden",
+      id: "mossy-trees",
       title: "Moss Garden",
-      image: "/images/treescape/gallery/garden.jpg",
-      description: "The serene green moss garden that provides peaceful views from our rooms."
+      image: "/images/mossy_trees.JPG",
+      description: "The serene moss garden with ancient trees creating a peaceful atmosphere."
     },
     {
-      id: "deluxe-room",
-      title: "Deluxe Room",
-      image: "/images/treescape/gallery/deluxe-room.jpg",
-      description: "Comfortable deluxe room with pool and garden views."
+      id: "balcony-room",
+      title: "Balcony Room",
+      image: "/images/balcony_room.JPG",
+      description: "Comfortable room with private balcony overlooking the gardens."
     },
     {
-      id: "family-room",
-      title: "Family Room",
-      image: "/images/treescape/gallery/family-room.jpg",
-      description: "Spacious family room with high ceilings and mezzanine floor."
+      id: "pool-day",
+      title: "Pool Area",
+      image: "/images/pool_main_day.JPG",
+      description: "Daytime view of our beautiful pool area with natural surroundings."
     },
     {
-      id: "breakfast",
+      id: "breakfast-table",
       title: "Breakfast Service",
-      image: "/images/treescape/gallery/breakfast.jpg",
-      description: "Delicious breakfast included with all room stays."
+      image: "/images/breakfast_table.JPG",
+      description: "Delicious breakfast served in our peaceful dining area."
+    },
+    {
+      id: "glass-cabin",
+      title: "Glass Cabin",
+      image: "/images/glass_cabin.JPG",
+      description: "Unique glass cabin accommodation surrounded by nature."
+    },
+    {
+      id: "moss-closeup",
+      title: "Moss Details",
+      image: "/images/moss_closeup.JPG",
+      description: "Close-up view of the beautiful moss that gives our resort its unique character."
+    },
+    {
+      id: "pool-night",
+      title: "Evening Pool",
+      image: "/images/pool_main_night.JPG",
+      description: "The magical atmosphere of our pool area in the evening."
+    },
+    {
+      id: "dome-inside",
+      title: "Dome Interior",
+      image: "/images/dome_inside.JPG",
+      description: "Interior view of our unique dome accommodation."
+    },
+    {
+      id: "minidome-moss",
+      title: "Mini Dome",
+      image: "/images/minidome_moss.JPG",
+      description: "Charming mini dome nestled among the moss gardens."
+    },
+    {
+      id: "pool-highangle",
+      title: "Aerial Pool View",
+      image: "/images/pool_highangle.JPG",
+      description: "Bird's eye view of our pool and surrounding landscape."
+    },
+    {
+      id: "christmas-bed",
+      title: "Festive Room",
+      image: "/images/christmas_bed.JPG",
+      description: "Beautifully decorated room during the holiday season."
+    },
+    {
+      id: "balcony-view",
+      title: "Balcony",
+      image: "/images/balcony.JPG",
+      description: "Private balcony with stunning views of the natural surroundings."
+    },
+    {
+      id: "highangle-chairs",
+      title: "Seating Area",
+      image: "/images/highangle_chairs.JPG",
+      description: "Comfortable seating area with panoramic views."
+    },
+    {
+      id: "pool-main-bright2",
+      title: "Pool Bright View",
+      image: "/images/pool_main_bright2.jpg",
+      description: "Another beautiful angle of our main swimming pool in bright daylight."
+    },
+    {
+      id: "mossy-trees2",
+      title: "Ancient Moss Trees",
+      image: "/images/mossy_trees2.JPG",
+      description: "Additional view of our magnificent moss-covered ancient trees."
+    },
+    {
+      id: "treescape-landing",
+      title: "Resort Entrance",
+      image: "/images/treescape_landing.jpg",
+      description: "Welcome view of Treescape resort showing our natural entrance."
+    },
+    {
+      id: "pool2-day",
+      title: "Infinity Pool",
+      image: "/images/pool2_day.JPG",
+      description: "Our stunning infinity pool blending seamlessly with the natural landscape."
+    },
+    {
+      id: "pool-main-vintage",
+      title: "Pool Classic View",
+      image: "/images/pool_main_old.JPG",
+      description: "Classic perspective of our main pool area."
+    },
+    {
+      id: "moss-closeup2",
+      title: "Moss Garden Detail",
+      image: "/images/moss_closeup_2.JPG",
+      description: "Detailed close-up of the intricate moss patterns in our gardens."
+    },
+    {
+      id: "pool2-aerial",
+      title: "Pool Aerial View",
+      image: "/images/pool2_highangle.jpg",
+      description: "High-angle view of our infinity pool and surrounding area."
     }
   ],
   services: [

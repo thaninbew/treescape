@@ -27,12 +27,13 @@ export default async function ResortPage({ params }: { params: Promise<{ resort:
     <main>
       {/* Hero Section */}
       <Hero
-        image={`https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=800&fit=crop`}
+        image={resortData.hero.image}
         title={resortData.hero.title}
         subtitle={resortData.hero.subtitle}
         ctaText="Book Your Stay"
         ctaHref={`/${resort}/contact`}
         height="large"
+        gallery={resortData.gallery}
       />
 
       {/* Welcome Section */}

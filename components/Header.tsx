@@ -26,8 +26,13 @@ export default function Header({ resort }: { resort?: string }) {
           <nav>
             <ul className="flex space-x-6">
               <li>
-                <Link href={`/${resort}`} className="text-zen-brown hover:text-zen-leaf">
+                <Link href="/" className="text-zen-brown hover:text-zen-leaf">
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${resort}`} className="text-zen-brown hover:text-zen-leaf">
+                  Resort
                 </Link>
               </li>
               <li>

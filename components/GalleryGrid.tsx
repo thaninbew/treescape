@@ -61,10 +61,10 @@ export default function GalleryGrid({ items, columns = 3 }: GalleryGridProps) {
               src={item.image}
               alt={item.title}
               fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
+              className="object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-75"
             />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+            <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
               <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                 <p className="text-sm opacity-90">{item.description}</p>
