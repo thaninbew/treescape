@@ -70,17 +70,17 @@ export const resortData = {
   ],
   gallery: [
     {
+        id: "treescape-hero",
+        title: "Resort Overview",
+        image: "/images/treescape_hero.JPG",
+        description: "The beautiful main view of our Treescape retreat resort."
+      },
+    {
         id: "pool-main-bright",
         title: "Swimming Pool",
         image: "/images/pool_main_bright.jpg",
         description: "Our stunning swimming pool surrounded by lush greenery."
       },
-      {
-      id: "treescape-hero",
-      title: "Resort Overview",
-      image: "/images/treescape_hero.JPG",
-      description: "The beautiful main view of our Treescape retreat resort."
-    },
     {
       id: "mossy-trees",
       title: "Moss Garden",
