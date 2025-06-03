@@ -19,14 +19,14 @@ export default async function ContactPage({ params }: { params: Promise<{ resort
   }
 
   return (
-    <main className="py-16">
+    <main className="py-16 bg-zen-brown min-h-screen">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-zen-brown mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-zen-vanilla mb-6">
             Contact {resortData.name}
           </h1>
-          <p className="text-xl text-zen-brown opacity-80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-zen-vanilla opacity-80 max-w-3xl mx-auto leading-relaxed">
             Get in touch with our team to plan your perfect getaway. We&apos;re here to help you 
             create unforgettable memories at our resort.
           </p>
