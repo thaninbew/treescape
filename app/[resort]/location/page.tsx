@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
 import BookingButtons from '@/components/BookingButtons';
@@ -47,6 +48,62 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
                 referrerPolicy="no-referrer-when-downgrade"
                 title={`${resortData.name} Location Map`}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Travel Tips & Directions */}
+        <section className="bg-zen-vanilla rounded-lg p-8 md:p-12 mb-16">
+          <h2 className="text-3xl font-bold text-zen-brown mb-8 text-center">
+            Travel Tips & Directions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-zen-brown mb-4">Getting Here</h3>
+              <ul className="space-y-3 text-zen-brown">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Airport pickup and dropoff service available upon request</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Free parking available on-site for all guests</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Look for our sign and logo: &ldquo;Tree Scape Resort&rdquo; at the entrance</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-zen-brown mb-4">What to Bring</h3>
+              <ul className="space-y-3 text-zen-brown">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Weather-appropriate clothing for outdoor activities</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Camera to capture the beautiful scenery</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Sunscreen and insect repellent for outdoor comfort</span>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -102,25 +159,26 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
             </div>
           </div>
 
-          {/* Nearby Landmarks */}
+          {/* Resort Entrance */}
           <div className="bg-zen-coffee rounded-lg p-8">
             <h2 className="text-2xl font-bold text-zen-brown mb-6">
-              Nearby Landmarks
+              Resort Entrance
             </h2>
-            <div className="space-y-4">
-              {resortData.location.landmarks.map((landmark, index) => (
-                <div key={index} className="flex items-center">
-                  <svg className="w-5 h-5 text-zen-green mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-zen-brown">{landmark}</span>
-                </div>
-              ))}
+            <div className="aspect-video rounded-lg overflow-hidden bg-zen-brown mb-4 relative">
+              <Image
+                src="/images/entrance.png"
+                alt="Treescape Resort Entrance"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 flex items-end p-4 z-10">
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Activities & Transportation */}
+        {/* Activities & Nearby Landmarks */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Activities */}
           <div className="bg-white border border-zen-beaver rounded-lg p-8">
@@ -139,76 +197,20 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
             </div>
           </div>
 
-          {/* Transportation */}
+          {/* Nearby Landmarks */}
           <div className="bg-white border border-zen-beaver rounded-lg p-8">
             <h2 className="text-2xl font-bold text-zen-brown mb-6">
-              Transportation
+              Nearby Landmarks
             </h2>
-            <div className="space-y-3">
-              {resortData.location.transportation.map((transport, index) => (
+            <div className="space-y-4">
+              {resortData.location.landmarks.map((landmark, index) => (
                 <div key={index} className="flex items-center">
-                  <svg className="w-4 h-4 text-zen-green mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-zen-green mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-zen-brown text-sm">{transport}</span>
+                  <span className="text-zen-brown">{landmark}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Directions & Travel Tips */}
-        <section className="bg-zen-vanilla rounded-lg p-8 md:p-12 mb-16">
-          <h2 className="text-3xl font-bold text-zen-brown mb-8 text-center">
-            Travel Tips & Directions
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold text-zen-brown mb-4">Getting Here</h3>
-              <ul className="space-y-3 text-zen-brown">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>GPS coordinates available upon booking confirmation</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>Detailed driving directions provided with reservation</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>Shuttle service available from major transportation hubs</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold text-zen-brown mb-4">What to Bring</h3>
-              <ul className="space-y-3 text-zen-brown">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>Comfortable walking shoes for nature trails</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>Weather-appropriate clothing for outdoor activities</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-zen-green mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>Camera to capture the beautiful scenery</span>
-                </li>
-              </ul>
             </div>
           </div>
         </section>

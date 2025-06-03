@@ -241,14 +241,15 @@ export const resortData = {
     }
   ],
   contact: {
-    address: "Treescape Retreat Resort, Thailand",
-    phone: "+66 (0) 123-456-789",
-    email: "info@treescaperesort.com",
+    address: "333 M.2, T.Nong Kwai, Hang Dong, Muang, Chiang Mai, 50230, Thailand",
+    phone: "(+66)053-125-123, (+66)091-069-0123",
+    email: "reservation@treescaperesort.com",
+    website: "www.treescaperesort.com",
     hours: "Reception: 24/7",
-    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.2!2d-118.6!3d34.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA2JzAwLjAiTiAxMTjCsDM2JzAwLjAiVw!5e0!3m2!1sen!2sus!4v1620160000000!5m2!1sen!2sus"
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1064.3879536778034!2d98.90590092159155!3d18.732564493038826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da37af3d6883df%3A0x57516ce400ab09!2sTree%20Scape%20Retreat%20Resort!5e0!3m2!1sen!2sth!4v1748968480034!5m2!1sen!2sth"
   },
   location: {
-    description: "Located in a peaceful setting surrounded by lush gardens and moss landscapes. Our retreat resort offers a perfect escape with modern amenities and natural beauty.",
+    description: "A serene hideaway tucked within the Hang Dong district of Chiang Mai, Thailand.",
     landmarks: ["Near beautiful natural attractions", "Close to local markets and restaurants", "Easy access to cultural sites"],
     activities: ["Swimming", "Garden walks", "Relaxation", "Photography", "Local excursions"],
     transportation: ["Airport transfer available", "Taxi service", "Local transport connections"]
