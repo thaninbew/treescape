@@ -53,7 +53,7 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
         </section>
 
         {/* Travel Tips & Directions */}
-        <section className="bg-zen-vanilla rounded-lg p-8 md:p-12 mb-16">
+        <section className="bg-zen-coffee rounded-lg p-8 md:p-12 mb-16">
           <h2 className="text-3xl font-bold text-zen-brown mb-8 text-center">
             Travel Tips & Directions
           </h2>
@@ -111,7 +111,7 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
         {/* Location Details */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Information */}
-          <div className="bg-zen-vanilla rounded-lg p-8">
+          <div className="bg-zen-coffee rounded-lg p-8">
             <h2 className="text-2xl font-bold text-zen-brown mb-6">
               Contact Information
             </h2>
@@ -181,7 +181,7 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
         {/* Activities & Nearby Landmarks */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Activities */}
-          <div className="bg-white border border-zen-beaver rounded-lg p-8">
+          <div className="bg-zen-vanilla border border-zen-beaver rounded-lg p-8">
             <h2 className="text-2xl font-bold text-zen-brown mb-6">
               Local Activities
             </h2>
@@ -198,7 +198,7 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
           </div>
 
           {/* Nearby Landmarks */}
-          <div className="bg-white border border-zen-beaver rounded-lg p-8">
+          <div className="bg-zen-vanilla border border-zen-beaver rounded-lg p-8">
             <h2 className="text-2xl font-bold text-zen-brown mb-6">
               Nearby Landmarks
             </h2>
@@ -216,7 +216,7 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
         </section>
 
         {/* Call to Action */}
-        <section className="bg-zen-brown text-zen-coffee rounded-lg p-8 md:p-12 text-center">
+        <section className="bg-zen-vanilla text-zen-brown rounded-lg p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Visit {resortData.name}?
           </h2>

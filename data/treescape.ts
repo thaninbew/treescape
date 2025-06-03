@@ -250,8 +250,8 @@ export const resortData = {
   },
   location: {
     description: "A serene hideaway tucked within the Hang Dong district of Chiang Mai, Thailand.",
-    landmarks: ["Near beautiful natural attractions", "Close to local markets and restaurants", "Easy access to cultural sites"],
-    activities: ["Swimming", "Garden walks", "Relaxation", "Photography", "Local excursions"],
+    landmarks: ["Wat Phra That Doi Suthep", "Chiang Mai PAO Park", "Grand Canyon Water Park"],
+    activities: ["Garden walks", "Relaxation", "Photography", "Temples", "Food", "Shopping"],
     transportation: ["Airport transfer available", "Taxi service", "Local transport connections"]
   },
   reviews: [
