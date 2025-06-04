@@ -126,7 +126,7 @@ export default async function ContactPage({ params }: { params: Promise<{ resort
             <h2 className="text-2xl font-bold text-zen-brown mb-6">
               Find Us
             </h2>
-            <div className="aspect-video rounded-lg overflow-hidden">
+            <div className="aspect-square rounded-lg overflow-hidden">
               <iframe
                 src={resortData.contact.mapEmbed}
                 width="100%"
@@ -143,7 +143,7 @@ export default async function ContactPage({ params }: { params: Promise<{ resort
 
         {/* Contact Form */}
         <section className="mb-16">
-          <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
+          <div className="bg-zen-coffee rounded-lg shadow-lg p-8 md:p-12">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-zen-brown mb-4">
                 Send Us a Message
@@ -159,7 +159,7 @@ export default async function ContactPage({ params }: { params: Promise<{ resort
         </section>
 
         {/* FAQ Section */}
-        <section className="bg-zen-coffee rounded-lg p-8 md:p-12 mb-16">
+        <section className="bg-zen-vanilla rounded-lg p-8 md:p-12 mb-16">
           <h2 className="text-3xl font-bold text-zen-brown mb-8 text-center">
             Frequently Asked Questions
           </h2>
@@ -231,7 +231,7 @@ export default async function ContactPage({ params }: { params: Promise<{ resort
         </section>
 
         {/* Final CTA */}
-        <section className="bg-zen-brown text-zen-coffee rounded-lg p-8 md:p-12 text-center">
+        <section className="bg-zen-coffee  text-zen-brown rounded-lg p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Book Your Stay?
           </h2>

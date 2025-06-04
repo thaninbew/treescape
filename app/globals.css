@@ -13,11 +13,14 @@
   --color-zen-leaf: #889D35;       /* Palm Leaf */
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Font Families */
+  --font-sans: var(--font-salma-pro), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", monospace;
+  --font-salma: var(--font-salma-pro), ui-sans-serif, system-ui, sans-serif;
   
   /* Zen Design Colors */
   --color-zen-brown: #564635;
@@ -38,5 +41,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-salma-pro), var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
