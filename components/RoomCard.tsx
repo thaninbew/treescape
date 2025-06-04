@@ -125,9 +125,11 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
         </Link>
         
         {/* Room Description */}
-        <p className="text-zen-brown opacity-80 text-sm mb-4 line-clamp-3 leading-relaxed">
-          {getRoomDescription(room.id, room.description)}
-        </p>
+        <div className="h-10 mb-4">
+          <p className="text-zen-brown opacity-80 text-sm line-clamp-2 leading-5 h-10">
+            {getRoomDescription(room.id, room.description)}
+          </p>
+        </div>
         
         {/* Room Features */}
         <div className="grid grid-cols-2 gap-3 mb-4">
