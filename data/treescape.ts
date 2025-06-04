@@ -230,8 +230,9 @@ export const resortData = {
     {
       id: "extra-bed",
       name: "Extra Bed Service",
-      description: "Additional beds available for 1,000 baht per bed for your convenience.",
-      icon: "bed"
+      description: "Additional beds available per bed per night for your convenience.",
+      icon: "bed",
+      price: 1000
     },
     {
       id: "child-friendly",

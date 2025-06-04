@@ -1,10 +1,12 @@
 import React from 'react';
+import Price from './Price';
 
 interface Service {
   id: string;
   name: string;
   description: string;
   icon: string;
+  price?: number;
 }
 
 interface ServicesListProps {
@@ -58,7 +60,7 @@ const iconMap: { [key: string]: React.JSX.Element } = {
 };
 
 export default function ServicesList({ services, layout = 'grid' }: ServicesListProps) {
-  const containerClasses = layout === 'grid' 
+  const containerClasses = layout === 'grid'
     ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
     : 'space-y-6';
     
@@ -81,6 +83,9 @@ export default function ServicesList({ services, layout = 'grid' }: ServicesList
             </h3>
             <p className="text-zen-brown opacity-80 leading-relaxed">
               {service.description}
+              {service.price !== undefined && (
+                <> <Price amount={service.price} /></>
+              )}
             </p>
           </div>
         </div>
