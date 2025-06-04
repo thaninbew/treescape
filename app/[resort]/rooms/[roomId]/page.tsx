@@ -71,7 +71,7 @@ export default async function RoomDetailsPage({
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold text-zen-green">
-                <Price amount={room.price} />
+                <Price amount={room.price} showFrom={true} />
               </div>
               <div className="text-sm text-zen-vanilla opacity-70">
                 per night
@@ -302,7 +302,7 @@ export default async function RoomDetailsPage({
             <div className="bg-white rounded-lg shadow-lg p-6 border border-zen-beaver sticky top-8">
               <div className="text-center mb-6">
                 <div className="text-4xl font-bold text-zen-leaf mb-2">
-                  <Price amount={room.price} />
+                  <Price amount={room.price} showFrom={true} layout="centered" />
                 </div>
                 <div className="text-sm text-zen-brown opacity-70 mb-2">
                   per night

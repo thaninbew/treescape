@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useCurrency } from '@/contexts/CurrencyContext';
 
 export default function Header({ resort }: { resort?: string }) {
-  const { currency, setCurrencyCode, rates } = useCurrency();
+  const { currency, setCurrencyCode, rates, isLoading } = useCurrency();
   const handleBookNow = () => {
     window.open('https://ibe.hoteliers.guru/ibe/en/Tree-Scape-Retreat-Resort-Hangdong-Chiangmai-TH?tid=e45117b832284e96bedb1ee28d32553d&', '_blank');
   };
@@ -81,17 +81,25 @@ export default function Header({ resort }: { resort?: string }) {
               Contact
             </Link>
           )}
-          <select
-            value={currency.code}
-            onChange={(e) => setCurrencyCode(e.target.value)}
-            className="ml-2 bg-zen-coffee border border-zen-brown text-zen-brown text-sm rounded px-2 py-1"
-          >
-            {Object.keys(rates).map((code) => (
-              <option key={code} value={code}>
-                {code}
-              </option>
-            ))}
-          </select>
+          <div className="flex flex-col items-center ml-2">
+            <div className="flex items-center">
+              <select
+                value={currency.code}
+                onChange={(e) => setCurrencyCode(e.target.value)}
+                className="bg-zen-coffee border border-zen-brown text-zen-brown text-sm rounded px-2 py-1"
+                disabled={isLoading}
+              >
+                {Object.keys(rates).map((code) => (
+                  <option key={code} value={code}>
+                    {code}
+                  </option>
+                ))}
+              </select>
+              {isLoading && (
+                <div className="ml-2 w-3 h-3 border border-zen-brown border-t-transparent rounded-full animate-spin"></div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </header>

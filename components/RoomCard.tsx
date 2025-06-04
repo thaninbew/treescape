@@ -106,11 +106,13 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
             priority
           />
           {/* Price Badge */}
-          <div className="absolute top-4 right-4 bg-zen-green text-white px-3 py-1 rounded-full text-sm font-semibold">
-            <Price amount={room.price} />
+          <div className="absolute top-4 right-4 bg-zen-green text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+            <div className="drop-shadow-sm">
+              <Price amount={room.price} showFrom={true} />
+            </div>
           </div>
           {/* Breakfast Badge */}
-          <div className="absolute bottom-4 left-4 bg-zen-brown bg-opacity-90 text-zen-vanilla px-3 py-1 rounded-full text-xs font-medium">
+          <div className="absolute bottom-4 left-4 bg-zen-brown bg-opacity-90 text-zen-vanilla px-3 py-1 rounded-full text-xs font-medium shadow-lg">
             ✓ Breakfast Included
           </div>
         </div>
@@ -119,7 +121,7 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
       <div className="p-6">
         {/* Room Title - Clickable */}
         <Link href={roomDetailsUrl}>
-          <h3 className="text-xl font-bold text-zen-brown mb-2 group-hover:text-zen-green transition-colors duration-300 cursor-pointer hover:text-zen-green">
+          <h3 className="text-xl font-bold text-zen-brown mb-2 group-hover:text-zen-leaf transition-colors duration-300 cursor-pointer hover:text-zen-green">
             {room.name}
           </h3>
         </Link>
@@ -227,7 +229,7 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
         {/* Price Display */}
         <div className="mb-4 text-center">
           <div className="text-2xl font-bold text-zen-leaf">
-            <Price amount={room.price} />
+            <Price amount={room.price} showFrom={true} layout="centered" />
           </div>
           <div className="text-sm text-zen-brown opacity-70">
             per night
