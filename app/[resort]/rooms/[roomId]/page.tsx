@@ -5,6 +5,7 @@ import RoomImageSlider from '@/components/RoomImageSlider';
 import RoomCard from '@/components/RoomCard';
 import BookingButtons from '@/components/BookingButtons';
 import CTAButton from '@/components/CTAButton';
+import Price from '@/components/Price';
 
 // Map resort names to their data
 const resortDataMap = {
@@ -24,10 +25,10 @@ type RoomWithNotes = {
   notes?: string[];
 };
 
-export default async function RoomDetailsPage({ 
-  params 
-}: { 
-  params: Promise<{ resort: string; roomId: string }> 
+export default async function RoomDetailsPage({
+  params
+}: {
+  params: Promise<{ resort: string; roomId: string }>
 }) {
   const { resort, roomId } = await params;
   const resortData = resortDataMap[resort as keyof typeof resortDataMap];
@@ -70,7 +71,7 @@ export default async function RoomDetailsPage({
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold text-zen-green">
-                ฿{room.price.toLocaleString()}
+                <Price amount={room.price} />
               </div>
               <div className="text-sm text-zen-vanilla opacity-70">
                 per night
@@ -161,7 +162,7 @@ export default async function RoomDetailsPage({
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                     <span className="text-zen-brown">
-                      <strong>Extra Bed:</strong> ฿1,000 per bed per night
+                      <strong>Extra Bed:</strong> <Price amount={1000} /> per bed per night
                     </span>
                   </div>
                   
@@ -301,7 +302,7 @@ export default async function RoomDetailsPage({
             <div className="bg-white rounded-lg shadow-lg p-6 border border-zen-beaver sticky top-8">
               <div className="text-center mb-6">
                 <div className="text-4xl font-bold text-zen-leaf mb-2">
-                  ฿{room.price.toLocaleString()}
+                  <Price amount={room.price} />
                 </div>
                 <div className="text-sm text-zen-brown opacity-70 mb-2">
                   per night
