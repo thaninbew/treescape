@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import CTAButton from './CTAButton';
 
 interface GalleryItem {
@@ -33,13 +33,16 @@ export default function Hero({
   const [imageLoaded, setImageLoaded] = useState(false);
   
   // Use gallery images if provided, otherwise use the single image
-  const images = gallery.length > 0 ? gallery.map(item => item.image) : [image];
+  const images = useMemo(
+    () => (gallery.length > 0 ? gallery.map((item) => item.image) : [image]),
+    [gallery, image]
+  );
   
   // Preload the first image
   useEffect(() => {
     const firstImage = new Image();
     firstImage.onload = () => setImageLoaded(true);
-    firstImage.src = images[0].replace(/^\//, '');
+    firstImage.src = images[0];
   }, [images]);
   
   useEffect(() => {
@@ -70,7 +73,7 @@ export default function Hero({
           imageLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         style={{
-          backgroundImage: imageLoaded ? `url('${currentImage.replace(/^\//, '')}')` : 'none'
+          backgroundImage: imageLoaded ? `url('${currentImage}')` : 'none'
         }}
       >
       </div>
