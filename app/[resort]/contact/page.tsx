@@ -1,4 +1,7 @@
+'use client';
+
 import { notFound } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
 import ContactForm from '@/components/ContactForm';
@@ -10,8 +13,9 @@ const resortDataMap = {
   mountainview: mountainviewData,
 };
 
-export default async function ContactPage({ params }: { params: Promise<{ resort: string }> }) {
-  const { resort } = await params;
+export default function ContactPage() {
+  const params = useParams();
+  const resort = params.resort as string;
   const resortData = resortDataMap[resort as keyof typeof resortDataMap];
   
   if (!resortData) {
@@ -240,22 +244,18 @@ export default async function ContactPage({ params }: { params: Promise<{ resort
             Our team is standing by to help you plan an unforgettable experience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href={`tel:${resortData.contact.phone}`} size="lg">
-              Call to Book
+            <CTAButton 
+              onClick={() => window.open('https://ibe.hoteliers.guru/ibe/en/Tree-Scape-Retreat-Resort-Hangdong-Chiangmai-TH?tid=e45117b832284e96bedb1ee28d32553d&', '_blank')}
+              size="lg"
+            >
+              Book Online
             </CTAButton>
-            <CTAButton href={`mailto:${resortData.contact.email}`} variant="secondary" size="lg">
-              Email Us
+            <CTAButton href={`/${resort}/contact`} variant="secondary" size="lg">
+              Contact
             </CTAButton>
           </div>
         </section>
       </div>
     </main>
   );
-}
-
-export function generateStaticParams() {
-  return [
-    { resort: 'treescape' },
-    { resort: 'mountainview' },
-  ];
 } 

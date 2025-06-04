@@ -31,7 +31,6 @@ export default async function ResortPage({ params }: { params: Promise<{ resort:
         title={resortData.hero.title}
         subtitle={resortData.hero.subtitle}
         ctaText="Book Your Stay"
-        ctaHref={`/${resort}/contact`}
         height="large"
         gallery={resortData.gallery}
       />

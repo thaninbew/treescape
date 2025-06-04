@@ -15,7 +15,6 @@ interface HeroProps {
   title: string;
   subtitle: string;
   ctaText?: string;
-  ctaHref?: string;
   height?: 'screen' | 'large' | 'medium';
   gallery?: GalleryItem[];
 }
@@ -25,7 +24,6 @@ export default function Hero({
   title, 
   subtitle, 
   ctaText = "Book Now",
-  ctaHref = "#",
   height = 'large',
   gallery = []
 }: HeroProps) {
@@ -56,6 +54,10 @@ export default function Hero({
       return () => clearInterval(interval);
     }
   }, [images.length, imageLoaded]);
+
+  const handleBookNow = () => {
+    window.open('https://ibe.hoteliers.guru/ibe/en/Tree-Scape-Retreat-Resort-Hangdong-Chiangmai-TH?tid=e45117b832284e96bedb1ee28d32553d&', '_blank');
+  };
   
   const heightClasses = {
     screen: 'h-screen',
@@ -91,7 +93,7 @@ export default function Hero({
         <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl mx-auto">
           {subtitle}
         </p>
-        <CTAButton href={ctaHref} size="lg" className="shadow-lg">
+        <CTAButton onClick={handleBookNow} size="lg" className="shadow-lg">
           {ctaText}
         </CTAButton>
       </div>
