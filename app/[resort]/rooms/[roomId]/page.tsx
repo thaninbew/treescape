@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
 import RoomImageSlider from '@/components/RoomImageSlider';
+import RoomCard from '@/components/RoomCard';
 import BookingButtons from '@/components/BookingButtons';
 import CTAButton from '@/components/CTAButton';
-import Image from 'next/image';
 
 // Map resort names to their data
 const resortDataMap = {
@@ -345,35 +345,7 @@ export default async function RoomDetailsPage({
               .filter(r => r.id !== room.id)
               .slice(0, 3)
               .map((otherRoom) => (
-                <div key={otherRoom.id} className="bg-zen-vanilla rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="aspect-video relative">
-                    <Image
-                      src={`https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop`}
-                      alt={otherRoom.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-zen-brown mb-2">
-                      {otherRoom.name}
-                    </h3>
-                    <p className="text-zen-brown opacity-80 text-sm mb-4">
-                      {otherRoom.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-2xl font-bold text-zen-green">
-                          ฿{otherRoom.price.toLocaleString()}
-                        </span>
-                        <div className="text-xs text-zen-green">Breakfast Included</div>
-                      </div>
-                      <CTAButton href={`/${resort}/rooms/${otherRoom.id}`} size="sm">
-                        View Details
-                      </CTAButton>
-                    </div>
-                  </div>
-                </div>
+                <RoomCard key={otherRoom.id} room={otherRoom} resort={resort} />
               ))}
           </div>
         </section>
