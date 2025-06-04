@@ -300,13 +300,13 @@ export default async function RoomDetailsPage({
             {/* Main Booking Card - Now sticky */}
             <div className="bg-white rounded-lg shadow-lg p-6 border border-zen-beaver sticky top-8">
               <div className="text-center mb-6">
-                <div className="text-4xl font-bold text-zen-green mb-2">
+                <div className="text-4xl font-bold text-zen-leaf mb-2">
                   ฿{room.price.toLocaleString()}
                 </div>
                 <div className="text-sm text-zen-brown opacity-70 mb-2">
                   per night
                 </div>
-                <div className="inline-block bg-zen-green bg-opacity-20 text-zen-green px-3 py-1 rounded-full text-sm font-medium">
+                <div className="inline-block bg-zen-green bg-opacity-20 text-white px-3 py-1 rounded-full text-sm font-medium">
                   ✓ Breakfast Included
                 </div>
               </div>

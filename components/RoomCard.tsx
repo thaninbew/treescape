@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import CTAButton from './CTAButton';
 import BookingButtons from './BookingButtons';
 
@@ -42,32 +43,38 @@ const getRoomArea = (roomId: string): string => {
 };
 
 export default function RoomCard({ room, resort, className = '' }: RoomCardProps) {
+  const roomDetailsUrl = resort ? `/${resort}/rooms/${room.id}` : `/rooms/${room.id}`;
+  
   return (
     <div className={`bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-zen-beaver border-opacity-20 ${className}`}>
-      {/* Room Image */}
-      <div className="aspect-video relative overflow-hidden">
-        <Image
-          src={getRoomPreviewImage(room.id)}
-          alt={room.name}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          priority
-        />
-        {/* Price Badge */}
-        <div className="absolute top-4 right-4 bg-zen-green text-white px-3 py-1 rounded-full text-sm font-semibold">
-          ฿{room.price.toLocaleString()}
+      {/* Room Image - Clickable */}
+      <Link href={roomDetailsUrl} className="block">
+        <div className="aspect-video relative overflow-hidden cursor-pointer">
+          <Image
+            src={getRoomPreviewImage(room.id)}
+            alt={room.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            priority
+          />
+          {/* Price Badge */}
+          <div className="absolute top-4 right-4 bg-zen-green text-white px-3 py-1 rounded-full text-sm font-semibold">
+            ฿{room.price.toLocaleString()}
+          </div>
+          {/* Breakfast Badge */}
+          <div className="absolute bottom-4 left-4 bg-zen-brown bg-opacity-90 text-zen-vanilla px-3 py-1 rounded-full text-xs font-medium">
+            ✓ Breakfast Included
+          </div>
         </div>
-        {/* Breakfast Badge */}
-        <div className="absolute bottom-4 left-4 bg-zen-brown bg-opacity-90 text-zen-vanilla px-3 py-1 rounded-full text-xs font-medium">
-          ✓ Breakfast Included
-        </div>
-      </div>
+      </Link>
 
       <div className="p-6">
-        {/* Room Title */}
-        <h3 className="text-xl font-bold text-zen-brown mb-2 group-hover:text-zen-green transition-colors duration-300">
-          {room.name}
-        </h3>
+        {/* Room Title - Clickable */}
+        <Link href={roomDetailsUrl}>
+          <h3 className="text-xl font-bold text-zen-brown mb-2 group-hover:text-zen-green transition-colors duration-300 cursor-pointer hover:text-zen-green">
+            {room.name}
+          </h3>
+        </Link>
         
         {/* Room Description */}
         <p className="text-zen-brown opacity-80 text-sm mb-4 line-clamp-2 leading-relaxed">
@@ -154,7 +161,7 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
 
         {/* Price Display */}
         <div className="mb-4 text-center">
-          <div className="text-2xl font-bold text-zen-green">
+          <div className="text-2xl font-bold text-zen-leaf">
             ฿{room.price.toLocaleString()}
           </div>
           <div className="text-sm text-zen-brown opacity-70">
