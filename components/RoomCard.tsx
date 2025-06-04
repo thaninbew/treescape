@@ -106,8 +106,8 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
             priority
           />
           {/* Price Badge */}
-          <div className="absolute top-4 right-4 bg-zen-green text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-            <div className="drop-shadow-sm">
+          <div className="absolute top-4 right-4 bg-zen-leaf text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+            <div className="drop-shadow-md">
               <Price amount={room.price} showFrom={true} />
             </div>
           </div>
