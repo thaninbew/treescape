@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { resortData as treescapeData } from '@/data/treescape';
 import { resortData as mountainviewData } from '@/data/mountainview';
-import GalleryGrid from '@/components/GalleryGrid';
+import RoomImageSlider from '@/components/RoomImageSlider';
 import BookingButtons from '@/components/BookingButtons';
 import CTAButton from '@/components/CTAButton';
 import Image from 'next/image';
@@ -85,52 +85,8 @@ export default async function RoomDetailsPage({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Column - Images and Details */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Main Image */}
-            <div className="aspect-video rounded-lg overflow-hidden">
-              <Image
-                src={`https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop`}
-                alt={room.name}
-                width={800}
-                height={600}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Room Gallery */}
-            <section>
-              <h2 className="text-2xl font-bold text-zen-brown mb-6">
-                Room Gallery
-              </h2>
-              <GalleryGrid 
-                items={[
-                  {
-                    id: `${room.id}-1`,
-                    title: `${room.name} - Bedroom`,
-                    image: `https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop`,
-                    description: `Bedroom view of ${room.name}`
-                  },
-                  {
-                    id: `${room.id}-2`,
-                    title: `${room.name} - Bathroom`,
-                    image: `https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=300&fit=crop`,
-                    description: `Bathroom of ${room.name}`
-                  },
-                  {
-                    id: `${room.id}-3`,
-                    title: `${room.name} - View`,
-                    image: `https://images.unsplash.com/photo-1586611292717-f828b167408c?w=400&h=300&fit=crop`,
-                    description: `View from ${room.name}`
-                  },
-                  {
-                    id: `${room.id}-4`,
-                    title: `${room.name} - Balcony`,
-                    image: `https://images.unsplash.com/photo-1595846519845-68e298c2edd8?w=400&h=300&fit=crop`,
-                    description: `Balcony of ${room.name}`
-                  }
-                ]} 
-                columns={2} 
-              />
-            </section>
+            {/* Room Image Slider */}
+            <RoomImageSlider roomId={room.id} roomName={room.name} />
 
             {/* Room Details */}
             <section className="bg-zen-vanilla rounded-lg p-8">

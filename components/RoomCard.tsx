@@ -69,13 +69,13 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
         {/* Price and Actions */}
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-2xl font-bold text-zen-green">
+            <span className="text-2xl font-bold text-zen-leaf">
               ฿{room.price.toLocaleString()}
             </span>
             <span className="text-sm text-zen-brown opacity-70 ml-1">
               /night
             </span>
-            <div className="text-xs text-zen-green font-medium">
+            <div className="text-xs text-zen-leaf font-medium">
               Breakfast Included
             </div>
           </div>
