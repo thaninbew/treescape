@@ -43,11 +43,11 @@ export default async function RoomDetailsPage({
   }
 
   return (
-    <main className="py-16">
+    <main className="py-16 bg-zen-brown">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <nav className="text-sm text-zen-brown opacity-70 mb-4">
+          <nav className="text-sm text-zen-vanilla opacity-70 mb-4">
             <a href={`/${resort}`} className="hover:opacity-100">
               {resortData.name}
             </a>
@@ -61,10 +61,10 @@ export default async function RoomDetailsPage({
           
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-zen-brown mb-2">
+              <h1 className="text-4xl md:text-5xl font-bold text-zen-vanilla mb-2">
                 {room.name}
               </h1>
-              <p className="text-xl text-zen-brown opacity-80">
+              <p className="text-xl text-zen-vanilla opacity-80">
                 {room.description}
               </p>
             </div>
@@ -72,7 +72,7 @@ export default async function RoomDetailsPage({
               <div className="text-3xl font-bold text-zen-green">
                 ฿{room.price.toLocaleString()}
               </div>
-              <div className="text-sm text-zen-brown opacity-70">
+              <div className="text-sm text-zen-vanilla opacity-70">
                 per night
               </div>
               <div className="text-xs text-zen-green font-medium mt-1">
@@ -336,7 +336,7 @@ export default async function RoomDetailsPage({
 
         {/* Similar Rooms */}
         <section className="mt-16">
-          <h2 className="text-3xl font-bold text-zen-brown mb-8 text-center">
+          <h2 className="text-3xl font-bold text-zen-vanilla mb-8 text-center">
             Other Rooms at {resortData.name}
           </h2>
           

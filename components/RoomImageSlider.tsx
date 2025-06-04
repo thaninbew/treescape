@@ -30,17 +30,25 @@ const getRoomImages = (roomId: string): string[] => {
       '/images/deluxe/4.jpg',
       '/images/deluxe/5.jpg',
       '/images/deluxe/6.jpg',
-      '/images/deluxe/7.jpg'
+      '/images/deluxe/7.jpg',
+      // Additional unnumbered images
+      '/images/deluxe/DSC07049.jpg'
     ],
     'pool_access': [
       '/images/pool_access/1.jpg',
       '/images/pool_access/2.jpg',
       '/images/pool_access/3.JPG',
       '/images/pool_access/4.jpg',
-      '/images/pool_access/5.JPG'
+      '/images/pool_access/5.JPG',
+      // Additional unnumbered images
+      '/images/pool_access/DSC08817.jpg',
+      '/images/pool_access/DSC07167.JPG',
+      '/images/pool_access/DSC07049.jpg'
     ],
     'luxury_pool_access': [
-      '/images/luxury_pool_access/1.jpg'
+      '/images/luxury_pool_access/1.jpg',
+      // Additional unnumbered images
+      '/images/luxury_pool_access/DSC08843.jpg'
     ],
     'family_room': [
       '/images/family_room/1.jpg',
@@ -51,7 +59,11 @@ const getRoomImages = (roomId: string): string[] => {
       '/images/family_room/6.jpg',
       '/images/family_room/7.jpg',
       '/images/family_room/8.jpg',
-      '/images/family_room/9.jpg'
+      '/images/family_room/9.jpg',
+      // Additional unnumbered images
+      '/images/family_room/DSC07342.jpg',
+      '/images/family_room/DSC08492.jpg',
+      '/images/family_room/DSC07373.jpg'
     ],
   };
   
