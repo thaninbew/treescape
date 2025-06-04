@@ -106,7 +106,7 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
           />
           {/* Price Badge */}
           <div className="absolute top-4 right-4 bg-zen-green text-white px-3 py-1 rounded-full text-sm font-semibold">
-            ฿{room.price.toLocaleString()}
+            <span className="text-xs font-normal opacity-80">from</span> ฿{room.price.toLocaleString()}
           </div>
           {/* Breakfast Badge */}
           <div className="absolute bottom-4 left-4 bg-zen-brown bg-opacity-90 text-zen-vanilla px-3 py-1 rounded-full text-xs font-medium">
@@ -224,7 +224,7 @@ export default function RoomCard({ room, resort, className = '' }: RoomCardProps
         {/* Price Display */}
         <div className="mb-4 text-center">
           <div className="text-2xl font-bold text-zen-leaf">
-            ฿{room.price.toLocaleString()}
+            <span className="text-sm font-normal text-zen-brown opacity-70">from</span> ฿{room.price.toLocaleString()}
           </div>
           <div className="text-sm text-zen-brown opacity-70">
             per night

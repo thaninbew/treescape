@@ -70,7 +70,7 @@ export default async function RoomDetailsPage({
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold text-zen-green">
-                ฿{room.price.toLocaleString()}
+                <span className="text-sm font-normal text-zen-vanilla opacity-70">from</span> ฿{room.price.toLocaleString()}
               </div>
               <div className="text-sm text-zen-vanilla opacity-70">
                 per night
@@ -301,7 +301,7 @@ export default async function RoomDetailsPage({
             <div className="bg-white rounded-lg shadow-lg p-6 border border-zen-beaver sticky top-8">
               <div className="text-center mb-6">
                 <div className="text-4xl font-bold text-zen-leaf mb-2">
-                  ฿{room.price.toLocaleString()}
+                  <span className="text-sm font-normal text-zen-brown opacity-70">from</span> ฿{room.price.toLocaleString()}
                 </div>
                 <div className="text-sm text-zen-brown opacity-70 mb-2">
                   per night
