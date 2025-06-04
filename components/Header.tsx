@@ -69,14 +69,14 @@ export default function Header({ resort }: { resort?: string }) {
         <div className="flex gap-2 items-center">
           <button
             onClick={handleBookNow}
-            className="bg-zen-leaf text-zen-coffee px-4 py-2 rounded hover:bg-zen-brown transition-colors font-medium"
+            className="bg-zen-leaf text-white px-4 py-2 rounded hover:bg-zen-brown transition-colors font-medium"
           >
             Book Now
           </button>
           {resort && (
             <Link
               href={`/${resort}/contact`}
-              className="bg-zen-brown text-zen-coffee px-4 py-2 rounded hover:bg-zen-leaf transition-colors font-medium"
+              className="bg-zen-brown text-white px-4 py-2 rounded hover:bg-zen-leaf transition-colors font-medium"
             >
               Contact
             </Link>

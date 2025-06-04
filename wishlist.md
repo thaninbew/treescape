@@ -2,6 +2,7 @@
 - currency for viewing choice
 - optimize images
 - mobile site
+- email 
 
 for treescape retreat resort, all rooms have included breakfast.  Prices start at Deluxe: 2800.00, Pool Access: 3100, Luxury Pool Access Room: 4000 and Family Room: 4500.00. 
 

@@ -20,7 +20,7 @@ export default function CTAButton({
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-zen-leaf focus:ring-offset-2";
   
   const variantClasses = {
-    primary: "bg-zen-leaf text-zen-coffee hover:bg-zen-brown hover:text-zen-coffee",
+    primary: "bg-zen-leaf text-white hover:bg-zen-brown hover:text-zen-coffee",
     secondary: "bg-zen-vanilla text-zen-brown border-2 border-zen-brown hover:bg-zen-brown hover:text-zen-coffee"
   };
   
