@@ -23,10 +23,10 @@ export default async function LocationPage({ params }: { params: Promise<{ resor
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-zen-vanilla mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {resortData.name} Location
           </h1>
-          <p className="text-xl text-zen-vanilla opacity-80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-zen-coffee opacity-80 max-w-3xl mx-auto leading-relaxed">
             {resortData.location.description}
           </p>
         </div>

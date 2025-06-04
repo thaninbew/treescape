@@ -24,10 +24,10 @@ export default async function GalleryPage({ params }: { params: Promise<{ resort
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-zen-vanilla mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {resortData.name} Gallery
           </h1>
-          <p className="text-xl text-zen-vanilla opacity-80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-zen-coffee opacity-80 max-w-3xl mx-auto leading-relaxed">
             Explore the beauty of our resort through these carefully captured moments. 
             Click on any image to view it in full detail.
           </p>
