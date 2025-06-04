@@ -15,8 +15,8 @@ const resortDataMap = {
   mountainview: mountainviewData,
 };
 
-export default async function ResortPage({ params }: { params: Promise<{ resort: string }> }) {
-  const { resort } = await params;
+export default function ResortPage({ params }: { params: { resort: string } }) {
+  const { resort } = params;
   const resortData = resortDataMap[resort as keyof typeof resortDataMap];
   
   if (!resortData) {

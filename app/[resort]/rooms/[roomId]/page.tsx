@@ -24,12 +24,12 @@ type RoomWithNotes = {
   notes?: string[];
 };
 
-export default async function RoomDetailsPage({ 
-  params 
-}: { 
-  params: Promise<{ resort: string; roomId: string }> 
+export default function RoomDetailsPage({
+  params
+}: {
+  params: { resort: string; roomId: string }
 }) {
-  const { resort, roomId } = await params;
+  const { resort, roomId } = params;
   const resortData = resortDataMap[resort as keyof typeof resortDataMap];
   
   if (!resortData) {

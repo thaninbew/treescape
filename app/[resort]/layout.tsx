@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   description: "Explore our resort accommodations and amenities",
 };
 
-export default async function ResortLayout({
+export default function ResortLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ resort: string }>;
+  params: { resort: string };
 }) {
-  const { resort } = await params;
+  const { resort } = params;
   
   return (
     <>

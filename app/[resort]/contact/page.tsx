@@ -10,8 +10,8 @@ const resortDataMap = {
   mountainview: mountainviewData,
 };
 
-export default async function ContactPage({ params }: { params: Promise<{ resort: string }> }) {
-  const { resort } = await params;
+export default function ContactPage({ params }: { params: { resort: string } }) {
+  const { resort } = params;
   const resortData = resortDataMap[resort as keyof typeof resortDataMap];
   
   if (!resortData) {
